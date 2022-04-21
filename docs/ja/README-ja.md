@@ -1,11 +1,13 @@
-<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="550"
+日本語 | [English](../../README.md) | [简体中文](../zh-cn/README.zh-CN.md) | [Português Brasileiro](../pt-br/README-pt-br.md) | [한국어](../ko/README-ko.md) | [Español (España)](../es-es/README-es-es.md) | [Русский](../ru/README-ru.md)
+
+<p align="center"><a href="https://day.js.org/" target="_blank" rel="noopener noreferrer"><img width="550"
                                                                              src="https://user-images.githubusercontent.com/17680888/39081119-3057bbe2-456e-11e8-862c-646133ad4b43.png"
                                                                              alt="Day.js"></a></p>
 <p align="center">Moment.js と同じ API を備えた <b>2kB</b> の軽量ライブラリ</p>
 <br>
 <p align="center">
     <a href="https://unpkg.com/dayjs/dayjs.min.js"><img
-            src="http://img.badgesize.io/https://unpkg.com/dayjs/dayjs.min.js?compression=gzip&style=flat-square"
+            src="https://img.badgesize.io/https://unpkg.com/dayjs/dayjs.min.js?compression=gzip&style=flat-square"
             alt="Gzip Size"></a>
     <a href="https://www.npmjs.com/package/dayjs"><img src="https://img.shields.io/npm/v/dayjs.svg?style=flat-square"
                                                        alt="NPM Version"></a>

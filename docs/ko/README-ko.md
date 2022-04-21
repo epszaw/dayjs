@@ -1,11 +1,13 @@
-<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="550"
+한국어 | [English](../../README.md) | [简体中文](../zh-cn/README.zh-CN.md) | [日本語](../ja/README-ja.md) | [Português Brasileiro](../pt-br/README-pt-br.md) | [Español (España)](../es-es/README-es-es.md) | [Русский](../ru/README-ru.md)
+
+<p align="center"><a href="https://day.js.org/" target="_blank" rel="noopener noreferrer"><img width="550"
                                                                              src="https://user-images.githubusercontent.com/17680888/39081119-3057bbe2-456e-11e8-862c-646133ad4b43.png"
                                                                              alt="Day.js"></a></p>
 <p align="center">Moment.js와 호환되는 API를 가진 경량 라이브러리 (<b>2kB</b>)</p>
 <br>
 <p align="center">
     <a href="https://unpkg.com/dayjs/dayjs.min.js"><img
-            src="http://img.badgesize.io/https://unpkg.com/dayjs/dayjs.min.js?compression=gzip&style=flat-square"
+            src="https://img.badgesize.io/https://unpkg.com/dayjs/dayjs.min.js?compression=gzip&style=flat-square"
             alt="Gzip Size"></a>
     <a href="https://www.npmjs.com/package/dayjs"><img src="https://img.shields.io/npm/v/dayjs.svg?style=flat-square"
                                                        alt="NPM Version"></a>
@@ -42,9 +44,9 @@ dayjs()
 
 ## 시작해볼까요!
 
-### Documentation
+### 문서
 
-You can find for more details, API, and other docs on [day.js.org](https://day.js.org/) website.
+더 많은 세부 사항과 API, 그리고 다른 문서를 [day.js.org](https://day.js.org/) 웹사이트에서 볼 수 있습니다.
 
 ### 설치
 

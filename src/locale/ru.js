@@ -27,25 +27,33 @@ function relativeTimeWithPlural(number, withoutSuffix, key) {
 
   return `${number} ${plural(format[key], +number)}`
 }
+const months = (dayjsInstance, format) => {
+  if (MONTHS_IN_FORMAT.test(format)) {
+    return monthFormat[dayjsInstance.month()]
+  }
+  return monthStandalone[dayjsInstance.month()]
+}
+months.s = monthStandalone
+months.f = monthFormat
+
+const monthsShort = (dayjsInstance, format) => {
+  if (MONTHS_IN_FORMAT.test(format)) {
+    return monthShortFormat[dayjsInstance.month()]
+  }
+  return monthShortStandalone[dayjsInstance.month()]
+}
+monthsShort.s = monthShortStandalone
+monthsShort.f = monthShortFormat
 
 const locale = {
   name: 'ru',
   weekdays: 'воскресенье_понедельник_вторник_среда_четверг_пятница_суббота'.split('_'),
   weekdaysShort: 'вск_пнд_втр_срд_чтв_птн_сбт'.split('_'),
   weekdaysMin: 'вс_пн_вт_ср_чт_пт_сб'.split('_'),
-  months: (dayjsInstance, format) => {
-    if (MONTHS_IN_FORMAT.test(format)) {
-      return monthFormat[dayjsInstance.month()]
-    }
-    return monthStandalone[dayjsInstance.month()]
-  },
-  monthsShort: (dayjsInstance, format) => {
-    if (MONTHS_IN_FORMAT.test(format)) {
-      return monthShortFormat[dayjsInstance.month()]
-    }
-    return monthShortStandalone[dayjsInstance.month()]
-  },
+  months,
+  monthsShort,
   weekStart: 1,
+  yearStart: 4,
   formats: {
     LT: 'H:mm',
     LTS: 'H:mm:ss',
@@ -69,7 +77,17 @@ const locale = {
     y: 'год',
     yy: relativeTimeWithPlural
   },
-  ordinal: n => n
+  ordinal: n => n,
+  meridiem: (hour) => {
+    if (hour < 4) {
+      return 'ночи'
+    } else if (hour < 12) {
+      return 'утра'
+    } else if (hour < 17) {
+      return 'дня'
+    }
+    return 'вечера'
+  }
 }
 
 dayjs.locale(locale, null, true)

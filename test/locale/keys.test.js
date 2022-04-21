@@ -4,14 +4,17 @@ import dayjs from '../../src'
 
 const localeDir = '../../src/locale'
 const Locale = []
+const localeNameRegex = /\/\/ (.*) \[/
 
 // load all locales from locale dir
 fs.readdirSync(path.join(__dirname, localeDir))
   .forEach((file) => {
+    const fPath = path.join(__dirname, localeDir, file)
     Locale.push({
       name: file,
       // eslint-disable-next-line import/no-dynamic-require, global-require
-      content: require(path.join(__dirname, localeDir, file)).default
+      content: require(fPath).default,
+      file: fs.readFileSync(fPath, 'utf-8')
     })
   })
 
@@ -31,8 +34,12 @@ Locale.forEach((locale) => {
       yearStart,
       meridiem
     } = locale.content
+    // comments required
+    const commentsMatchResult = locale.file.match(localeNameRegex)
+    expect(commentsMatchResult[1]).not.toBeUndefined()
 
     expect(name).toEqual(locale.name.replace('.js', ''))
+    expect(name).toBe(name.toLowerCase())
     expect(weekdays).toEqual(expect.any(Array))
 
     if (weekdaysShort) expect(weekdaysShort).toEqual(expect.any(Array))
@@ -45,6 +52,8 @@ Locale.forEach((locale) => {
       expect(months).toEqual(expect.any(Array))
     } else {
       expect(months(dayjs(), 'str')).toEqual(expect.any(String))
+      expect(months.f).toEqual(expect.any(Array))
+      expect(months.s).toEqual(expect.any(Array))
     }
     // monthsShort could be a function or array
     if (monthsShort) {
@@ -52,6 +61,8 @@ Locale.forEach((locale) => {
         expect(monthsShort).toEqual(expect.any(Array))
       } else {
         expect(monthsShort(dayjs(), 'str')).toEqual(expect.any(String))
+        expect(monthsShort.f).toEqual(expect.any(Array))
+        expect(monthsShort.s).toEqual(expect.any(Array))
       }
     }
     // function pass date return string or number or null

@@ -47,6 +47,7 @@ const locale = {
   monthsShort: 'tammi_helmi_maalis_huhti_touko_kesä_heinä_elo_syys_loka_marras_joulu'.split('_'),
   ordinal: n => `${n}.`,
   weekStart: 1,
+  yearStart: 4,
   relativeTime: {
     future: '%s päästä',
     past: '%s sitten',
@@ -66,13 +67,13 @@ const locale = {
     LT: 'HH.mm',
     LTS: 'HH.mm.ss',
     L: 'DD.MM.YYYY',
-    LL: 'Do MMMM[ta] YYYY',
-    LLL: 'Do MMMM[ta] YYYY, [klo] HH.mm',
-    LLLL: 'dddd, Do MMMM[ta] YYYY, [klo] HH.mm',
+    LL: 'D. MMMM[ta] YYYY',
+    LLL: 'D. MMMM[ta] YYYY, [klo] HH.mm',
+    LLLL: 'dddd, D. MMMM[ta] YYYY, [klo] HH.mm',
     l: 'D.M.YYYY',
-    ll: 'Do MMM YYYY',
-    lll: 'Do MMM YYYY, [klo] HH.mm',
-    llll: 'ddd, Do MMM YYYY, [klo] HH.mm'
+    ll: 'D. MMM YYYY',
+    lll: 'D. MMM YYYY, [klo] HH.mm',
+    llll: 'ddd, D. MMM YYYY, [klo] HH.mm'
   }
 }
 
