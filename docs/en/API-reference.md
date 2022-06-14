@@ -540,3 +540,9 @@ plugin [`Calendar`](./Plugin.md#calendar)
 `.updateLocale` to update a locale's properties
 
 plugin [`UpdateLocale`](./Plugin.md#updateLocale)
+
+### Diff
+
+`.diff` to get the difference between two dates in given unit
+
+plugin [`Diff`](./Plugin.md#diff)

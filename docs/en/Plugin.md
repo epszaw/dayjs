@@ -508,3 +508,18 @@ export default (option, dayjsClass, dayjsFactory) => {
   }
 }
 ```
+
+### Diff
+
+Diff adds `.diff()` API to get a `number` difference between two dates in given unit.
+
+The plugin supports: `millisecond`, `second`, `minute`, `hour`, `day`, `week` unit with pluralization.
+
+```javascript
+import Diff from 'dayjs/plugin/diff'
+
+dayjs.extend(Diff)
+
+dayjs('2020-06-01 01:00').diff('hour', '2020-06-01 17:00') // 16
+dayjs('2020-06-01 01:00').diff('day', '2020-06-21 17:00') // 20
+```
